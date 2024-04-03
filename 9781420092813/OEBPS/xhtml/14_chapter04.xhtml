@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en" xml:lang="en">
+<head>
+<title>chapter 4:Organizing Evidence</title>
+<link rel="stylesheet" type="text/css" href="../styles/stylesheet.css"/>
+</head>
+<body epub:type="bodymatter">
+<section epub:type="toc" role="doc-toc">
+<header>
+<p class="topline"></p>
+<h1 class="chaptername01"><span epub:type="pagebreak" role="doc-pagebreak" id="page_80" aria-label=" Page 80. "/><span epub:type="pagebreak" role="doc-pagebreak" id="page_81" aria-label=" Page 81. "/>Organizing Evidence</h1>
+<p class="number02">4</p>
+<p class="underline"></p>
+<p class="doi">DOI:10-9781420095806-4</p>
+<p class="intro">Errors, like straws, upon the surface flow;<span class="block"/>He who would search for pearls must dive below.</p>
+<p class="intro1">John Dryden, from &#x201C;All for Love,&#x201D; 1768</p>
+</header>
+<section aria-labelledby="sec4_1">
+<h2 class="chsubhead" id="sec4_1">Data Collection and Efficient Sorting Schemes</h2>
+<p class="noindent">As was previously discussed in Chapter 1, in the beginning of an investigation the available facts and information are like pieces of a puzzle found scattered about the floor: a piece here, a piece there, and one piece perhaps that has mysteriously slid under the refrigerator and won&#x2019; t be found until after the puzzle has been solved.</p>
+<p class="indent">At first, the puzzle pieces are simply sought out, gathered, and placed in a single heap on a table. Then, the pieces are sorted into smaller heaps. Perhaps all the pieces with straight edges are put into one pile, while pieces with a common color or textural appearance are put into other piles.</p>
+<p class="indent">Pieces within these piles are fitted up to each other until a few pieces are found that fit together. If someone has a notion of what the puzzle picture might be, the fitted pieces are then laid out approximately where they might go. For example, green-colored groups of fitted pieces might be tentatively placed at the bottom, where there is supposed to be grass, and blue-colored groups of fitted pieces might be placed near the top, where the sky is expected to be. The small groups of fitted pieces are initially like disconnected islands surrounded by a large amount of empty space.</p>
+<p class="indent">As more pieces are fitted together, the puzzle picture begins to emerge. The islands consisting of just a few fitted pieces become larger and merge with other islands. As portions of the picture develop, it becomes easier to figure out where the remaining puzzle pieces fit. Eventually, when all the pieces are fitted together, except for the one still hidden under the refrigerator, the puzzle is solved and the picture is plain to see.</p>
+<p class="indent">Efficiently solving a picture puzzle and efficiently solving a root cause investigation have several areas in common. Initially, all the pieces that belong to the puzzle have to be found and collected. If there are missing pieces, this diminishes the ability to form the whole picture. Likewise, if pieces are included that belong to another puzzle, this can cause confusion until it is recognized that the errant pieces do not belong to this puzzle.</p>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_82" aria-label=" Page 82. "/>When puzzle pieces are collected, they are sorted into groups, which is sometimes called binning, according to a reasonable scheme. Binning aids in efficiently fitting the puzzle pieces together. In a thousand-piece puzzle, it is easier and faster to determine how a related group of one hundred pieces might fit together than it is to try all one thousand pieces at once.</p>
+<p class="indent">Consider the following example. Suppose a person randomly takes one puzzle piece from a thousand-piece puzzle. This puzzle piece has four places on it that can be matched to four other puzzle pieces. While it might be necessary to check all 999 remaining pieces to find the four matching pieces, a person may have to try perhaps only 750 pieces to find the four matching pieces. If he is successful in finding the four matches, he now has clump of 5 solved puzzle pieces and 995 remaining pieces.</p>
+<p class="indent">If there are no edge pieces, the assembled clump of five puzzle pieces will have eight places that allow eight new pieces to be fitted into the clump. As before, while it might be necessary to check all 995 remaining pieces, the person will likely have to check perhaps only 870 pieces to find the 8 matching ones. Now the person has 13 pieces of the puzzle solved.</p>
+<p class="indent">If there are still no edge pieces in the clump, the clump of 13 puzzle pieces will have 12 places that will allow 12 new pieces to be fitted into the clump. Using the same reasoning as before, the person will now likely have to try about 905 pieces to find the 12 matching ones. Now the person has 25 pieces of the puzzle solved.</p>
+<p class="indent">With 25 pieces, the person now has 16 open places that will allow 16 more pieces to be fitted into the clump. With 975 pieces left, he will, on average, have to make 914 tries to fill in these positions with matching pieces. If successful, he will then have 41 pieces of the puzzle solved, and 959 pieces remaining.</p>
+<p class="indent">In other words, to solve the puzzle for just 41 pieces, or 4% of the puzzle, using this simple but brute force method, the person has had to make around 750 + 870 + 905 + 914 = 3,439 fit-up tries with all the puzzle pieces. However, there are still 959 more pieces left to fit into the puzzle. While this method is straightforward and logical, it is indeed a daunting way to solve the puzzle.</p>
+<p class="indent">Alternately, let&#x2019; s say that the person who wants to solve the puzzle divides the puzzle into ten piles. One pile might be all edge pieces, another might be all pieces that are sky blue, another might contain pieces that appear to be mountain along the horizon, and so on. In other words, the pieces are divided into piles that appear to share commonalities in the puzzle. Now, assume that each pile is composed of one hundred pieces that will all fit up to each other. If our patient puzzle solver selects one piece at random from a particular pile, he will have to make about 75 tries to assemble the first five pieces into a clump. To assemble 13 pieces, he will need to make 88 more tries. To assemble 25 pieces, he will have to make about 44 more tries. And <span epub:type="pagebreak" role="doc-pagebreak" id="page_83" aria-label=" Page 83. "/>finally, to assemble 41 pieces, he will need to make perhaps 38 more tries. This is a total of 75 + 88 + 44 + 38 = 245 tries.</p>
+<p class="indent">In sum, using the simple brute force method with no initial systematic sorting of the puzzle pieces could take about 3,439 fit-up tries to assemble 41 pieces of a thousand-piece puzzle. On the other hand, by systematically sorting the puzzle pieces into ten equal piles, the same result of 41 puzzles pieces being assembled can be accomplished with only about 245 fit-up tries. This is a reduction in fit-up tries of 93%.</p>
+<p class="indent">While the brute force method is logical and simple, it also is tedious, is time-consuming, and consumes resources prodigiously. The binning method significantly reduces the amount of work needed to solve a puzzle, but it also requires a logical, systematic binning scheme.</p>
+<p class="indent">Systematic binning of puzzle pieces has other advantages. Extraneous puzzle pieces that do not belong to this particular puzzle, which somehow got into this puzzle pile by mistake, are generally easier to detect during the binning process. Further, binning allows the puzzle to be solved by several groups of people working in parallel at the same time. When each group of people has its pile of pieces solved, each group can then match up their finished clump of assembled puzzle pieces with the other groups&#x2019;  clumps. A picture will then start to emerge.</p>
+<p class="indent">In the example cited previously, if each pile of 100 pieces were assembled in just 245 fit-up attempts, putting together the ten large clumps only requires a few more fit-up attempts, perhaps nine or ten. This means that the whole puzzle can be solved in about 3,018 fit-ups. Without binning, it took that same number of fit-ups just to solve 4% of the puzzle.</p>
+<p class="indent">Making sense of all the facts collected during an investigation is not much different from making sense of a pile of puzzle pieces.</p>
+</section>
+<section aria-labelledby="sec4_2">
+<h2 class="chsubhead" id="sec4_2">Verification of Facts</h2>
+<p class="noindent">The scientific investigation and analysis of an accident, catastrophic event, failure, or crime is structured like a pyramid. There should be a large foundation of verifiable facts and evidence at the bottom. These facts and evidence support the analysis that is performed in accordance with proven scientific principles and logic. The facts, evidence, and analysis, taken together, then support a small number of conclusions that form the apex of the pyramid.</p>
+<p class="indent">Conclusions should be directly based upon verifiable facts and analysis. They should not be based upon other conclusions, assumptions, or hypotheses. If the facts are arranged logically and systematically, the conclusions should almost be self-evident. Conclusions that are based upon other conclusions, assumptions, conjectures, or hypotheses, that in turn are based only <span epub:type="pagebreak" role="doc-pagebreak" id="page_84" aria-label=" Page 84. "/>upon a few selected facts and generalized principles, however, are a house of cards. When one point is proven wrong, the entire complicated logical construct collapses.</p>
+<p class="indent">Consider the following. As noted in Chapter 2, in most investigations the application of cogent arguments is more typical than the application of airtight deductive arguments. Consider what occurs when a cogent argument is true 90% of the time.</p>
+<p class="indent">If the foundation of an argument depends upon ten verified facts and there are no facts that falsify the argument, and each fact independently implies that A is true with a probability of 90%, then the chance that the final conclusion is true is [1 - (1 - 0.90)<sup>10</sup>] = 99.99999999%.</p>
+<p class="indent">However, if the foundation of the argument is supported by just one fact, there are no facts that falsify the argument, and from that one supporting fact a series of ten conclusions are made, each conclusion depending upon the previous one, then the final conclusion has a probability of being true only 0.90<sup>10</sup> or 34.9% of the time.</p>
+<p class="indent">Further, if one of the supporting ten facts in the first instance was not verifiable, this would reduce the probability that the conclusion reached with the other nine facts is true 99.99999999% of the time. However, if the one fact supporting the argument in the second instance is not verifiable, the probability of the final conclusion being true is zero.</p>
+<p class="indent">The following are some generalized guidelines for ensuring that the facts are accurate.</p>
+<ul class="ul">
+<li class="dotch01">Whenever possible, use primary sources. Primary sources are verifiable facts. Primary sources are not opinions, beliefs, guesses, assumptions, presumptions, or conclusions. Primary sources may be photographs of the evidence, sound or video recordings of the event, firsthand observational records of the event in logs, data recorded on output charts or printouts of data automatically logged during the event, records of observations by credible witnesses of the event, and samples of materials or physical evidence taken from the place where the event occurred. Perhaps a better name for a primary source is a firsthand source.
+<p class="indentch02">It is good practice to note the location or origin of primary sources used in an investigation not only so that they can be found again if needed for demonstrative purpose, but also so that their veracity can be double-checked by other investigators. If a primary source cannot be retained for long, attempt to document it and its relevant characteristics in case its validity is challenged later. Having impartial witnesses present during the documentation who can vouch that the documentation faithfully represents the condition of the item at that time is desirable.</p></li>
+<li class="dotch01"><span epub:type="pagebreak" role="doc-pagebreak" id="page_85" aria-label=" Page 85. "/>When secondary sources are used, that is, materials developed, compiled, and reported by other people or that otherwise are one step removed from the primary sources, be sure to note the particulars of where the information can be found, who provided it, and so on. Since secondary sources can run the gamut from wholly unreliable to rock solid reliable, it is best to know the reputation of the secondary source. Obviously, if the information is important to the conclusions of the investigation, it is best to use only secondary sources that have been proven to be reliable.</li>
+<li class="dotch01">Whenever possible, use several independent sources to verify a fact. A well-constructed sophistry can appear to trump or explain away a single fact. A fact that can be verified by several independent, well- regarded sources, however, is difficult to explain away by sophistry.</li>
+<li class="dotch01">Facts that are fundamental to the conclusions of an investigation should be documented. This is considered due diligence for an investigator. Due diligence is the measure of assiduity ordinarily expected from a reasonable and prudent investigator to ensure that the facts upon which an investigation is based are accurate and verifiable.
+<p class="indentch02">What constitutes due diligence is subjective and varies with the situation and type of investigation being done. However, one technique is to imagine yourself on the other side of the investigation. What facts would you point to as being unreliable, suspect, or incorrect if you were being accused of a crime, malfeasance, or something similar? In that sense, those are exactly the facts that must be checked, verified, and documented.</p></li>
+<li class="dotch01">Creating a file or notebook for all the notes and hardcopy items important to the investigation is very useful. In some cases, if information is being held in computer databases or files, hardcopy backups can save a lot of grief when a computer crashes or files are accidentally deleted. With respect to backup copies of computer databases, keep the backup copies in a completely different location to avoid both copies being stolen at the same time, burned up at the same time, and so on. This is called a common cause failure.</li>
+<li class="dotch01">Be cognizant of proprietary information, confidential information, information related to security, personal information, and so on. Be sure to provide standard acknowledgments when using copyrighted materials. While it may not be required by law, common courtesy dictates proper acknowledgment of other people&#x2019; s work or research when appropriate.</li>
+<li class="dotch01">When peer reviews are important, keep records of who reviewed what, and when it was done. When new facts are discovered that significantly change conclusions, these dates can become important in establishing a record of due diligence.</li>
+<li class="dotch01"><span epub:type="pagebreak" role="doc-pagebreak" id="page_86" aria-label=" Page 86. "/>Adhere to appropriate chain of custody protocols to preserve the integrity of evidence. A chain of custody protocol refers to the documentation, procedures, and methods used to ensure that the integrity and condition of evidence is preserved, and that it is not altered during its transfer, seizure, movement, examination, or analysis. Evidence should be handled properly to not only prevent damage, alteration, degradation, and contamination, but also to protect it from tampering and substitution. If physical evidence is altered, independent parties cannot verify the facts that were learned or asserted from the initial examination of this evidence. In cases involving legal prosecution, this can significantly compromise the case. Further, as was discussed in Chapter 2, evidence will often be examined two or more times to look for items or characteristics not originally considered during the first examination.
+<p class="indentch02">A good discussion of chain of custody legal requirements for the state of Delaware can be found at the following website: http://www. delcode.state.de.us/title10/c043/sc03/. While perhaps not exactly the same for each state or U.S. territory, these requirements are similar to standards used in most state and federal courts.</p></li>
+</ul>
+</section>
+<section aria-labelledby="sec4_3">
+<h2 class="chsubhead" id="sec4_3">Organization of Data and Evidence: Timelines</h2>
+<p class="noindent">A good place to begin sorting data and evidence is with the creation of a timeline. A timeline is a chronological arrangement of the events associated with the incident, crime, or failure being investigated. Timelines can be as simple as a single-column ordered list of events indicating what came first, what came second, and so on. Such a timeline can be conveniently done on a spreadsheet in tabular format.<a href="#tab4_1">Table 4.1</a> gives an example of a timeline that involves events associated with failure in an emergency diesel generator unit.</p>
+<table class="tablech04" id ="tab4_1">
+<caption>
+<p class="tcaption"><span epub:type="label">Table</span> <span epub:type="ordinal">4.1</span><span class="space"/>Example: Spreadsheet Event Timeline</p>
+</caption> 
+<thead class="th">
+<tr>
+<td>Time</td>
+<td>Sensor Point<span class="space"/></td>
+<td>Remarks</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13:03:30.425</td>
+<td class="tab3tr">3917</td>
+<td class="tab3tr">4160 v bus 1G bkr 1GE lockout</td>
+</tr>
+<tr>
+<td>13:03:30.529</td>
+<td class="tab3tr">3650</td>
+<td class="tab3tr">Diesel gen 2 bkr EG2 trip</td>
+</tr>
+<tr>
+<td>13:03:30.529</td>
+<td class="tab3tr">3911</td>
+<td class="tab3tr">4160 v bus 1G bkr 1GE trip</td>
+</tr>
+<tr class="td4">
+<td>13:03:35.248</td>
+<td class="tab3tr">3659</td>
+<td class="tab3tr">Diesel gen 2 lockout</td>
+</tr>
+</tbody>
+</table>
+<p class="indent">More sophisticated timelines can be timescaled, like a construction project Gantt chart schedule. By adding a timescale the relative duration of events and the time between events are proportional to the actual time intervals.<a href="#tab4_2">Table 4.2</a> is an example of an investigation Gantt chart that was used to plan a failure investigation at the beginning of the investigation.</p>
+<figure id="tab4_2" class="imagetab">
+<img src="../images/table4_2.jpg" alt=""/>
+<figcaption>
+<p class="tabcaption"><b>Table 4.2</b><span class="space"/>Example:Gantt Chart Investigation Plan Timeline</p>
+</figcaption>
+</figure>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_87" aria-label=" Page 87. "/>Similarly,<a href="#fig4_1">Figure 4.1</a> is an example of another kind of timeline. This one was also used to plan a failure investigation. A similar type of timeline can be laid out on a blackboard using Post-it notes to denote information and events. The Post-it notes are handy because they can be easily moved around and added to when needed. Like the Gantt chart, the example in<a href="#fig4_1">Figure 4.1</a><span class="space"/>can use brackets to denote items that occur over a period of time.</p>
+<figure id="fig4_1" class="img">
+<img src="../images/fig4_1.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.1</b><span class="space"/>Example:Scaled timeline with notes ad durations.</p></figcaption>
+</figure>
+<p class="indent">In some cases, it might be useful to have several timelines set up in parallel to each other. For example, in a power plant turbine accident, the events or conditions occurring in the turbine system might be on one timescaled timeline. Alongside this might be another timeline showing what was going on in the control room. Both timelines would be matched to the same timescale so that what was happening in the turbine could be easily compared with what was going on in the control room at the same time. A third timeline might then be added to show what was going on with the output of the generator, a fourth might be added to show what else was going on in the plant at the same time, and so on.</p>
+<p class="indent">With respect to a crime, sabotage, or destructive act, timelines are very useful in assessing potential suspects. If the time sequence of the event is reasonably known and laid out to scale, the verifiable activities of the various suspects can be similarly laid out in parallel to it. This will make plain which of the initial suspects had the right amount of unaccounted for time, at the right time, to have done the deed.</p>
+<p class="indent">The use of such a timeline can often rapidly reduce the number of prospective suspects. While many suspects may have wanted the victim to die or had a reason to be angry at the company, only perhaps a handful might have had the available time at the right time to do the deed.</p>
+<p class="indent">A timeline can also be correlated to a plot of a person&#x2019; s activities on a map or scaled drawing. While a timeline might show if a person had the available <span epub:type="pagebreak" role="doc-pagebreak" id="page_88" aria-label=" Page 88. "/><span epub:type="pagebreak" role="doc-pagebreak" id="page_89" aria-label=" Page 89. "/>time at the right time to do the deed, a plot of his verifiable positions at the various times on the timeline might further provide information as to whether he was in the right location, or could have been, to accomplish the deed.</p>
+</section>
+<section aria-labelledby="sec4_4">
+<h2 class="chsubhead" id="sec4_4">Cause-and-Effect Diagrams</h2>
+<p class="noindent">Presume that a tank of compressed air has ruptured and several people have been injured and several pieces of equipment have been damaged. A simple initial cause-and-effect diagram of the failure might look something like <a href="#fig4_2">Figure 4.2.</a> The immediate cause of the effect, that is, the damages and injuries, in this case is obvious: The compressed air tank ruptured. The evidence to support this includes eyewitness accounts, the condition of the tank itself, and the matching of missile fragments to the tank.</p>
+<figure id="fig4_2" class="img">
+<img src="../images/fig4_2.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.2</b><span class="space"/>Initial cause-and-effect diagram.</p></figcaption>
+</figure>
+<p class="indent">The next level of the diagram might look like <a href="#fig4_2">Figure 4.3.</a> In <a href="#fig4_3">Figure 4.3.</a> the immediately preceding possible causes for the tank to rupture are considered. Note that the five level 2 categories for this example are kept as general as possible. In a sense, the branching at each level of a cause-effect diagram is similar to the methodology applied in biological taxonomic systems or cla- distics. By doing so, whole branches of failure possibilities can sometimes be readily eliminated by the available evidence without having to expend a great deal of time or resources.</p>
+<figure id="fig4_3" class="img">
+<img src="../images/fig4_3.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.3</b><span class="space"/>Cause-and-effect diagram: second level of possibilities.</p></figcaption>
+</figure>
+<p class="indent">For example, if it can be shown that at no time was there a loss of electri-cal power in the system, then all the failure scenarios involving the failure of an electrical component can be eliminated.</p>
+<p class="indent">A cause-and-effect diagram lends itself well to the use of cogent or con-ditional deductive reasoning. Sometimes there is historical or heuristic data available that allow probabilities to be assigned to the various possible causes.</p>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_90" aria-label=" Page 90. "/>In this case at hand, for example, if the compressor and tank had been in place for 10 years, would it be reasonable to conclude that there is high probability that the unit was initially installed correctly and that there were no pertinent internal flaws? Such a conclusion might be reasonable if experience has shown, for example, that 99% of all compressor installation errors are detected during the first 6 months of operation, or that 95% of all manufacturing flaws are found during the first month of continuous operation, which is sometimes called the infant mortality operational period. Likewise, the same historical or heuristic data might indicate that if the compressor and tank had been in place and operating for 10 years, some kind of age-related effect might be indicated.</p>
+<p class="indent">Some gathering of simple background information and an examination of the event area might readily eliminate the possibility that the tank was damaged by some kind of external event, such as being impacted by an object, sabotage, being inadvertently damaged by nearby welding work, or perhaps external corrosion by exposure to chemicals. Likewise, verification that the relief valve was in good condition and confirmation by data logs or recorders that tank and system pressure limits were not exceeded would readily eliminate the possibility that the tank was excessively pressurized.</p>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_91" aria-label=" Page 91. "/>Presuming that the evidence cannot falsify that the tank somehow had degraded over time, but does falsify the other general possibilities, a level 3 diagram concerning tank degradation could be developed as shown in <a href="#fig4_4">Figure 4.4.</a> By proceeding methodically in this way, following the evidence and comparing it to hypothesized failure modes, the failure mode cause- and-effect relationships can be identified.</p>
+<figure id="fig4_4" class="img">
+<img src="../images/fig4_4.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.4</b><span class="space"/>Cause-and-effect diagram: third level of possibilities.</p></figcaption>
+</figure>
+<p class="indent"><a href="#fig4_5">Figure 4.5</a> an example of a slightly different type of cause-and-effect diagram that utilizes OR gate logic flowchart symbols. It depicts possible reasons why a relief valve unexpectedly opened and allowed pressurized hot water to escape. The escaping pressurized hot water immediately flashed into steam and then condensed. This caused habitability problems in the adjacent plant area, which then required the plant to reduce power to fix the problem. An unscheduled reduction of power at a base load power plant has obvious economic consequences as well as administrative ones.</p>
+<figure id="fig4_5" class="img">
+<img src="../images/fig4_5.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.5</b><span class="space"/>First-level cause-and-effect diagram for relief valve that unexpectedly lifted. RF, reactor feed water; RV, relief valve. RF-RV-28RV is simply the designation of a specific relief valve.</p></figcaption>
+</figure>
+<p class="indent">The first level of possibilities <a href="#fig4_5">(Figure 4.5)</a> shows the final, undesirable effect or consequence in the circle. Note that the first three possibilities are very general: it operated as designed, it malfunctioned, or something or someone caused it to open. A brief reason why two of the three possibilities were eliminated from consideration is noted under their respective boxes, and the diagonal lines through the boxes indicate that the available evidence was sufficient to eliminate them from further consideration. The note under the third box indicates that the evidence shows it did not operate according to its design specifications.</p>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_92" aria-label=" Page 92. "/>The next cause-and-effect level is shown in <a href="#fig4_6"> Figure 4.6,</a> where the possible reasons why the relief valve might have malfunctioned are considered: damage during installation, a manufacturing defect, incorrect set points, and age-related degradation. As the diagram shows, three of the four possibilities were eliminated by the evidence, and the remaining one is validated by the evidence.</p>
+<figure id="fig4_6" class="img">
+<img src="../images/fig4_6.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.6</b> Second-level cause-and-effect diagram for relief valve that lifted.</p></figcaption>
+</figure>
+<p class="indent">The next level of evaluation, shown in <a href="#fig4_7">Figure 4.7</a>, indicates in the dotted line to the side note or explanatory balloon that a diagnosis guide for relief valves published by the Electric Power Research Institute was consulted. An examination of the valve that failed was compared to the characteristic symptoms, or modes, of thirty-four types of failures. After a thorough examination of the valve in question, it was found that thirty-two of the listed applicable failure types did not fit the physical characteristics in this case. Only two items were found applicable, and they were related to each other, as shown in the diagram.</p>
+<figure id="fig4_7" class="img">
+<img src="../images/fig4_7.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.7</b> Third-level cause-and-effect diagram for relief valve that lifted. FME, foreign material in the valve that caused problems.</p></figcaption>
+</figure>
+<p class="indent">Figure 4.8 depicts the administrative steps that were not done or were missed that allowed the relief valve to become too old and then fail.</p>
+<figure id="fig4_8" class="img">
+<img src="../images/fig4_8.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.8</b><span class="space"/>Fourth-level cause-and-effect diagram showing the administrative causative factors. </p>
+</figcaption>
+</figure>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_93" aria-label=" Page 93. "/> <a href="#fig4_8">Figure 4.8</a> begins (top box, the resulting effect) where <a href="#fig4_6">Figures 4.6</a> and <a href="#fig4_7"> 4.7</a> left off: with the fact that the valve had degraded due to aging effects. The chain of administrative events or processes diagrammed below the top box in <a href="#fig4_8"> Figure 4.8</a> indicates that the relief valve was inadvertently not classified correctly in the preventive maintenance program. Consequently, preventive maintenance tasks (PMs) were not done on the valve to keep it in good condition.</p>
+<p class="indent">The diagram boxes in Figure 4.8 also indicate that when there had been an opportunity to do preventive maintenance work on the valve, there were insufficient spare parts to do a good job, although it did pass its functionality test. Again, because it was incorrectly considered to be a low-priority component, no follow-up maintenance work was done.</p>
+<p class="indent">The findings depicted in <a href="#fig4_8"> Figure 4.8</a> can be emphasized by cross-correlating them with a timeline, as shown in <a href="#fig4_9">Figure 4.9.</a> The scaled graphic comparison in the timeline of the standard replacement time to the expected replacement time and to the time that the valve was actually in service convincingly drives home the reason why the component failed.</p>
+<figure id="fig4_9" class="img">
+<img src="../images/fig4_9.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.9</b><span class="space"/>Timeline emphasizing the difference between the expected service life and the actual time in service.</p>
+</figcaption>
+</figure>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_94" aria-label=" Page 94. "/>In essence, a cause-and-effect diagram, such as those shown in the previous examples, is similar to a failure modes and effects analysis (FMEA) diagram, except that it is constructed in reverse. A failure modes and effects analysis is a method used to identify, define, and examine potential problems, errors, or failures in a product, component, system, or process usually during the design process. It is a designer&#x2019; s best guess, perhaps updated with actual field experience, as to all the ways in which the product, component, or system can fail. As such, a good FMEA can provide the following information:</p>
+<ul class="ul">
+<li class="dotch01">The known ways in which the item can fail</li>
+<li class="dotch01">The consequences of a particular failure mode</li>
+<li class="dotch01">The specific characteristics of a failure mode, i.e., its specific failure signature</li>
+<li class="dotch01">The various causes and factors that contribute to a failure mode</li>
+<li class="dotch01">Failure rates and failure probabilities of a failure mode</li>
+</ul>
+<p class="indent">A designer uses an FMEA to anticipate the various ways in which his product, component, or process might fail, and then develops contingencies <span epub:type="pagebreak" role="doc-pagebreak" id="page_95" aria-label=" Page 95. "/>to eliminate, mitigate, or cope with the failure. As such, an FMEA is a long list of &#x201C;what if&#x2019; s&#x201D; as to what could go wrong and (hopefully) what to do about it.</p>
+<p class="indent">Sometimes a reverse FMEA is thinly disguised in a vendor manual as a troubleshooting guide, or in publications that quantify the pattern of failures noted to occur in a particular type of machine, component, or system. Examples of such publications include the <i>IEEE Standard 500 Reliability Handbook, EPRITR-105872 Safety and Relief Valve Testing and Maintenance Guide, Machinery Failure Analysis and Troubleshooting</i> by Bloch and Geitner (see entry in references chapter), and many others. There is a gold mine of <span epub:type="pagebreak" role="doc-pagebreak" id="page_96" aria-label=" Page 96. "/>practical failure experience in these publications that can be a great help in determining the cause of a component or system failure.</p>
+</section>
+<section aria-labelledby="sec4_5">
+<h2 class="chsubhead" id="sec4_5">A Place to Start</h2>
+<p class="noindent">After setting up a timeline, in lieu of not having any particular idea or notion of where to begin assessing the facts and evidence associated with a particular failure, one way to organize the data being collected is to bin it according to known failure modes and their associated probabilities.</p>
+<p class="indent"><a href="#tab4_3">Table 4.3</a> is an example that involves centrifugal pumps. The listed failure probabilities are based upon centrifugal pump failures that occurred in U.S. process plants. Data concerning such a centrifugal pump failure can be collected and organized according to how they relate to these seven failure mode causes.</p>
+<table class="tablech04" id ="tab4_3">
+<caption>
+<p class="t3caption"><span epub:type="label">Table</span> <span epub:type="ordinal">4.3</span><span class="space"/>Failure Mode Probabilities of <span class="block"/>Centrifugal Pumps</p>
+</caption> 
+<thead class="th">
+<tr>
+<td>Cause</td>
+<td>Probability</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lack of maintenance, deficient maintenance</td>
+<td class="tab3tr">30%</td>
+</tr>
+<tr>
+<td>Installation deficiencies, errors, defects</td>
+<td class="tab3tr">25%</td>
+</tr>
+<tr>
+<td>Unexpected service conditions, incorrect design fit</td>
+<td class="tab3tr">15%</td>
+</tr>
+<tr>
+<td >Improper operation</td>
+<td class="tab3tr">12%</td>
+</tr>
+<tr>
+<td>Fabrication deficiencies</td>
+<td class="tab3tr">8%</td>
+</tr>
+<tr>
+<td>Deficient design</td>
+<td class="tab3tr">6%</td>
+</tr>
+<tr>
+<td>Material flaws, defects, deficiencies</td>
+<td class="tab3tr">4%</td>
+</tr>
+<tr class="td4">
+<td>Unknown failure cause</td>
+<td class="tab3tr">na</td>
+</tr>
+</tbody>
+</table>
+<p class="fnotetab"><i>Source:</i> Bloch, H., and Geitner, F.,<i> Machinery Failure Analysis <span class="block"/>and Troubleshooting</i>,<i> 3rd ed. (Houston, Texas, Gulf Publishing, <span class="block"/>1997), Table </i> 10-1, p. 575.</p>
+<p class="indent">It is sometimes useful to add one extra bin to account for data and information that does not appear to readily fit into any of the other categories. This helps prevent information from being forced into a bin and protects against deciding ahead of time that the failure must be one of the seven modes listed (an <i>a priori</i> assumption). This list of potential causes would then become the first level of a cause-and-effect diagram, such as shown in <a href="#fig4_2">Figures 4.2</a> and<a href="#fig4_5">4.5.</a></p>
+<p class="indent">Because the first two causes in the list, lack of maintenance and installation error, constitute about 55% of the failures that regularly occur in this equipment type, it might be efficient with respect to the allocation of investigative resources to begin collecting information first about the maintenance <span epub:type="pagebreak" role="doc-pagebreak" id="page_97" aria-label=" Page 97. "/>history and installation of the particular centrifugal pump. As the accumulated evidence either supports or falsifies these potential causes, then the less probable causes can be pursued.</p>
+<p class="indent">In that regard, an evidence-hypothesis table can be created to keep track of which hypotheses a particular fact or piece of evidence supports and which ones it falsifies. It might look something like that shown in Table 4.4. The potential causes along the top row of <a href="#tab4_4">Table 4.4</a> are the same as those listed in <a href="#tab4_3">Table 4.3</a></p>
+<table class="tablech04" id ="tab4_4">
+<caption>
+<p class="tcaption"><span epub:type="label">Table</span> <span epub:type="ordinal">4.4</span><span class="space"/>Evidence Hypothesis Table</p>
+</caption> 
+<thead class="th">
+<tr>
+<th>Evidence/Facts</th>
+<th>Maintenance</th>
+<th>Installation</th>
+<th>Service Condition</th>
+<th>Operation</th>
+<th>Fabrication</th>
+<th>Material Flaw</th>
+<th>Unknown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dimensions checked and correct</td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>All maintenance done was per vendor manual and on schedule</td>
+<td class="tab3tr">o</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>All replacement parts receipt inspected and checked</td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+
+<td>No fractures, breaks, or material problems</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>Installed by factory representative and then tested</td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>Pump model has good record in industry</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>Service condition matches design specifications</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>Supply to pilot valve needs 200 gpm for start;</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">O</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>low-pressure supply conditions only supplied 100 gpm recently</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">X</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+<tr>
+<td>Vendor manual warns about damage due to low pilot supply on start-up</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">X</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+<tr class="td4">
+<td>Damage matches that expected if pilot supply is low</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr">X</td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+<td class="tab3tr"></td>
+</tr>
+</tbody>
+</table>
+<p class="indent">As verifiable facts and evidence are collected, those items that support a particular hypothesis can be filled in with an X, and those items that falsify a particular hypothesis can be filled in with an O. Obviously, a box filled in with an O effectively kills that hypothesis.</p>
+</section>
+<section aria-labelledby="sec4_6">
+<h2 class="chsubhead" id="sec4_6">Event and Causal Factors Diagrams</h2>
+<p class="noindent">A timeline and a cause-and-effect diagram can be combined into a single graphic called an event and causal factor diagram. The sequence of events is essentially laid out linearly like a timeline. However, causal factors and conditions are diagrammed and connected to the events to show their cause-and-effect relationships.</p>
+<p class="indent">The usual geometric symbols used in an event causal factors diagram are as follows:</p>
+<ul class="ul">
+<li class="dotch01">Validated events are typically represented by rectangles.</li>
+<li class="dotch01">Events that must have occurred, or which have been hypothesized to have occurred but which are not presently validated, are represented by rectangles drawn with dotted lines.</li>
+<li class="dotch01"><span epub:type="pagebreak" role="doc-pagebreak" id="page_98" aria-label=" Page 98. "/><span epub:type="pagebreak" role="doc-pagebreak" id="page_99" aria-label=" Page 99. "/>Conditions presumed to have existed, but which have yet to be vali-dated are drawn with dotted curves.</li>
+<li class="dotch01">A diamond shape represents a significant event in which a limit is exceeded, a failure has occurred, or some other bad event has happened.</li>
+<li class="dotch01">An ellipse represents a causal factor and is connected to the event it affects by an arrow. A root cause might be further denoted by a verti-cal line on the right side of the ellipse.</li>
+<li class="dotch01">The undesirable final event is usually represented by a circle.</li>
+<li class="dotch01">Time intervals are denoted by brackets.</li>
+</ul>
+<p class="indent">Figure 4.10 is an example of an event and causal factor diagram that also contains a barrier diagram along the bottom. The barrier diagram indicates what work practices, rules, regulations, and so on were omitted, subverted, or otherwise not done and might have prevented the event from occurring.</p>
+<figure id="fig4_10" class="img">
+<img src="../images/fig4_10.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.10</b> DCE, design configuration evaluation; TCC, temporary configuration change.</p>
+</figcaption>
+</figure>
+<p class="indent">In the example, the event being depicted is a failure in a small section of heat trace wiring in a nuclear power plant safety system. The heat trace was used to maintain a warm temperature, within certain high and low limits, in piping associated with a tank that contained a special chemical solution. The <span epub:type="pagebreak" role="doc-pagebreak" id="page_100" aria-label=" Page 100. "/>tank, which contains about 4,500 gallons of solution, was part of an emer-gency safety system called the standby liquid control (SLC) system. When needed, injection of the solution from the tank into the reactor would bring the reactor from a hot condition to a cold, shutdown condition. The solution inside the tank, a mixture of water and sodium pentaborate, absorbs neu-trons and stops the reaction in the reactor.</p>
+<p class="indent">What occurred is this. A portion of the heat trace shorted. A passerby noted a small curl of smoke originating from the shorted wiring and also noted that the heat trace appeared to be glowing hot at one point. He reported the problem, and fire protocols were then initiated.</p>
+<p class="indent">The subsequent investigation found that when the heat trace wiring had been initially installed in the early 1970s, the National Electric Code (NEC) did not require that ground fault protection, similar to the GFI (ground fault interrupted) devices now found in most bathroom outlets in homes built since the late 1970s, also be installed.</p>
+<p class="indent">It was recommended by the manufacturer, however, that ground fault protection be installed because the vendor recognized at that time that the usual circuit protection of breakers or fuses would not protect against an internal short circuit within the heat trace wiring itself.</p>
+<p class="indent">It was also found in the investigation that the vendor recommended that the heat trace wiring be periodically tested by meggering, a method for measuring levels of resistance and dielectric strength in insulating materials. This was recommended so that any age-related degradation or damage that might inadvertently occur to the internal dielectric materials used in the heat trace wiring to make heat could be detected and monitored.</p>
+<p class="indent">As an aside, some time after this particular heat trace wiring had been installed the NEC did adopt a requirement to install protective ground fault sensors. Also, various other code publishers, such as the Institute of Electrical and Electronic Engineers (IEEE), adopted requirements for installation megger testing and also recommend periodic megger testing.</p>
+<p class="indent">Thus, it was concluded in the investigation that the wiring likely was damaged by being kicked or stepped on by nearby work activities, and as a result of that there was sustained moisture infiltration into the dielectric material that caused the heat trace to short-circuit. It was further concluded that had the vendor recommendations been followed&#x2014;  installation of a ground fault device and periodic meggering to monitor the condition of the heat trace wiring&#x2014;  as soon as the short began to develop, either the ground fault device would have opened the circuit and provided an indication or the out-of-spec condition would have been noted. This would have then prevented the smoke and glowing condition, and the subsequent initiation of station fire protocols.</p>
+<p class="indent">Note that the several time intervals are also depicted in Figure 4.10. In researching the problem, it was noted that heat trace wiring sometimes <span epub:type="pagebreak" role="doc-pagebreak" id="page_101" aria-label=" Page 101. "/>shorted and failed after about 10 years or so due to age-related effects, notably by moisture infiltration into the dielectric.</p>
+</section>
+<section aria-labelledby="sec4_7">
+<h2 class="chsubhead" id="sec4_7">Investigation Strategies</h2>
+<section aria-labelledby="sec4_8">
+<h2 class="ch4subheading" id="sec4_8">Scientific Method</h2>
+<p class="noindent">There is no reason why just one hypothesis at a time has to be considered. To efficiently use time, several hypotheses can be put forward, investigated in parallel to one another, and compared to the evidence as it is discovered. In this fashion, some hypotheses can be eliminated, and some modified in the iterative fashion already described in prior chapters. The arrangement noted in Table 4.4 for organizing data works reasonably well to do this.</p>
+</section>
+<section aria-labelledby="sec4_9">
+<h2 class="ch4subheading" id="sec4_9">Fault Tree Analysis (FTA)</h2>
+<p class="noindent">This technique originated in the Bell Telephone Laboratories in the early 1960s to evaluate safety in the Minuteman Missile Launch Control System. As noted in Figures 4.5 through 4.8, fault tree analysis is a logical, cause- and-effect tree diagram method. The starting point is the failure, crime, or accident event, which is the final effect. The possible and most generalized immediate causes are then considered and either eliminated or supported by the evidence. This can be called level 1. Those causes not eliminated or falsified by the evidence then become the resulting effects for level 2, and the next, more detailed causes are considered. This continues, level by level, until the causes are known to sufficient detail commensurate with the investigation.</p>
+<p class="indent">Sometimes, Boolean logic symbols are used, such as OR gates, EXCLUSIVE OR gates, AND gates, EXCLUSIVE AND gates, NOR gates, and so on, to indicate if-then type of cause and effect. The use of Boolean logic is useful in cases where an event could be caused by either single causes or multiple factors that must be present simultaneously to cause the effect. Sometimes, the probability of a particular cause-and-effect combination is known from experience, like that in Table 4.3. Using this, the branches of the diagram can be labeled with probabilities such that it becomes a reverse risk diagram.</p>
+<p class="indent">Using Boolean symbols to lay out all possible failure modes beginning with the failure event and finishing with the potential causes creates an upside-down tree diagram. In some complex tree diagrams, if all the possible failure pathways are mapped, it can be seen that sometimes there are several possible pathways between the same initial cause and the final effect.</p>
+<p class="indent">The specific path leading backwards in time from the failure event to the initiating cause or set of causes is sometimes referred to as the cut-set. When <span epub:type="pagebreak" role="doc-pagebreak" id="page_102" aria-label=" Page 102. "/>a full tree is flowcharted and there is more than one pathway from a specific cause, or set of causes, to the final failure, especially if programmatic processes and procedures are involved, the shortest realistic path between the two is called the minimum cut-set.</p>
+<p class="indent">Using failure probability trees in this way can sometimes be a useful guide to determine where to focus investigative resources in a timely fashion. Some investigators pursue the most probable causes after initially doing sufficient fieldwork to eliminate, or falsify, sometimes on a conditional basis, the less probable ones to ensure they are not a factor.</p>
+<p class="indent">As noted previously, fault trees are essentially reverse failure modes and effects analyses (FMEAs). Sometimes there are historical databases of failure probabilities available, or those probabilities are embedded in troubleshooting guides provided by the manufacturer, or by independent publications such as those from the Electric Power Research Institute (EPRI).</p>
+<p class="indent">There are two software programs often cited for computerized fault tree analysis. The first is called CAFTA, which was developed by EPRI. Many power plants use this, especially in the nuclear industry, as well as some aerospace companies. The other software program is called SAPHIRE, which is used by some U.S. government regulatory agencies and bureaus, especially those dealing with atomic reactors and manned space vehicles.</p>
+<p class="indent">The U.S. Nuclear Regulatory Commission&#x2019; s <i>Fault Tree Handbook, </i>NUREG-0492, published in January 1981, and the update published by NASA, <i>NASA Fault Tree Analysis with Aerospace Applications,</i> can be downloaded in PDF format free from the Internet, or paper copies can be purchased from the U.S. Government Printing Office for a nominal price. This publication is essentially an entire course in fault tree analysis theory and application.</p>
+</section>
+<section aria-labelledby="sec4_10">
+<h2 class="ch4subheading" id="sec4_10"><i>Why</i> Staircase</h2>
+<p class="noindent">This method is not much different than the fault tree analysis method or the event and causal analysis method. Some people call it &#x201C;the little kid&#x201D; method of investigation, since the method simply consists of a series of why&#x2019; s being asked.</p>
+<p class="indent">It starts out with defining what happened, that is, quantifying the resulting undesired effect. It then asks what the immediate cause of the resulting event was. When this first-level <i>why</i> is answered, and it should also answer the question &#x201C;Why is this the immediate cause and not something else?&#x201D; the next level <i>why</i> is then queried. This iterative continues until a sufficient <i>why</i> level is reached at which reasonable control can be exercised over the causes. Usually, an apparent cause type report needs to go only two or three why&#x2019; s deep. A more comprehensive root cause investigation may go four, five, or even six why&#x2019; s deep.</p>
+<p class="indent">For example, a resulting undesirable consequence may be the end result of a chain of events that all emanate from a single decision made by a subcommittee that was approved by the whole committee. At this point, another</p>
+<p class="noindent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_103" aria-label=" Page 103. "/><i>why</i> level could be instituted to investigate the psychological profile of each of the subcommittee and committee members to assess their motivations for making that decision. However, it might be more effective from the standpoint of time, resources, and managerial control to simply institute some decision-making guidelines on the subcommittee, such as an independent expert panel review.</p>
+<p class="indent">The <i>why</i> staircase method is often depicted graphically as a series of descending steps. The top step is the final, undesirable consequence. Each step below the top step is the immediate, preceding cause. It looks something like Figure 4.11.</p>
+<figure id="fig4_11" class="img">
+<img src="../images/fig4_11.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.11 </b><i>Why</i> staircase example of a compressor failure.</p></figcaption>
+</figure>
+</section>
+<section aria-labelledby="sec4_11">
+<h2 class="ch4subheading" id="sec4_11">Human Performance Evaluation Process (HPEP)</h2>
+<p class="noindent">Human error plays a role in many accidents, failures, crimes, and other types of undesirable consequences. The term <i>error</i> is used in this context to specially refer to actions taken by a person that were not intentionally malicious or destructive.</p>
+<p class="indent">A human error can directly cause an undesirable event; it may make the event worse, more severe in scope, or cause it to last longer; or it may have helped foster the event by creating the conditions that increase the probability that the event would happen. Human error includes simple mistakes such as pushing the wrong button, inappropriate responses to conditions and circumstances such as not calling the fire department before attempting to put the fire out, or perhaps inadequate responses to conditions and circumstances such as not examining the rest of the herd when one cow is suspected of having mad cow disease (bovine spongiform encephalopathy).</p>
+<p class="indent">When human error has played a significant role in the event, it is useful to determine whether the error was random or if there were specific conditions that increased the probability that the error would be made. For example, road fatigue and driver distractions play a significant role in the causation of car accidents.</p>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_104" aria-label=" Page 104. "/>Some general categories of factors that affect human performance include the following:</p>
+<section class="secmmc03">
+<p class="noindentch04">Fitness. This includes a person&#x2019; s general health, a person&#x2019; s mental attitude, and the influence of drugs or medications, fatigue, and physical or mental stress.</p>
+<p class="noindentch04">Knowledge. This includes the knowledge and training to do the task, skill level, proficiency level, cognitive abilities and attentiveness with respect to the task, familiarity with the task, and so on.</p>
+<p class="noindentch04">Procedures and instructions. Are they sufficiently detailed? Do they read well? Are they confusing? Are they conditions not covered in the procedure and are ambiguous? Do they contain error traps, that is, decision points within the procedure where it is easy to make a mistake?</p>
+<p class="noindentch04">Tools. Did the person have the right tools? Was he having to make do? Was the person wearing the appropriate protective clothing and equipment? Was all the safety equipment functional as intended?</p>
+<p class="noindentch04">Supervision and staffing. Were enough people assigned to the task? Was there adequate oversight by experienced personnel? Were decisions made promptly at the correct level? Did everyone know who was in charge, or was there confusion about who was to make the decision?</p>
+<p class="noindentch04">Ergonomics. Was the machine and human interface deficient? Were there appropriate warning alarms? Was the machine hard to use? Was the information displayed in an easy-to-understand format? Did the equipment respond as expected? Did the operation of the equipment require some kind of special knack that only some people understood?</p>
+<p class="noindentch04">Environment. This includes factors that can affect a person&#x2019; s ability to work, think, understand, function, and communicate, such as sound and noise levels, lighting, temperature, humidity, visual distractions, chair design, clothes, shoes, colors, bugs, and smell, to name a few.</p>
+</section>
+<p class="indent"> One popular and simple-to-use flowchart for depicting the factors involved with deficient human performance was developed for use by the Nuclear Regulator Commission and is contained in NUREG/CR-6751, <i>The Human Performance Evaluation Process,</i> which was published in 2001 and is listed in the reading list. The flowchart is reproduced in Figure 4.12. The numbers in the boxes in the far right of the figure refer to chapters in the monograph from which this was taken, where the topic is discussed in greater detail (see reading list).</p>
+<figure id="fig4_12" class="img">
+<img src="../images/fig4_12.jpg" alt=""/>
+<figcaption>
+<p class="figcaption"><b>Figure 4.12 </b>Human performance evaluation process cause tree.(From NUREG/CR-6751, September 2001.)</p></figcaption>
+</figure>
+</section>
+<section aria-labelledby="sec4_12">
+<h2 class="ch4subheading" id="sec4_12">Change Analysis</h2>
+<p class="noindent">Change analysis looks back to when a task or activity has been previously successfully accomplished, or perhaps uses an ideal model of how the task <span epub:type="pagebreak" role="doc-pagebreak" id="page_105" aria-label=" Page 105. "/>or activity should be accomplished. A comparison is then made to when the task or activity was not done successfully to determine what has changed or what is different between the two results. The differences between when the task or activity was successful and when it was unsuccessful are often called the deltas or gaps.</p>
+<p class="indent">One way to graphically depict a change analysis is to flowchart the successfully completed task or event and then similarly flowchart the unsuccessful event alongside it. This will highlight the deltas. The differences, or deltas, must then be individually assessed to determine whether they logically caused or contributed to the failure. Not all the deltas, of course, may be relevant to having caused or contributed to the failure. (See the &#x201C;Coincidence, Correlation, and Causation&#x201D; section in Chapter 3 where <i>post hoc ergo propter hoc</i> is disussed.)</p>
+</section>
+<section aria-labelledby="sec4_13">
+<h2 class="ch4subheading" id="sec4_13">Barrier Analysis</h2>
+<p class="noindent">Barrier analysis is often used when barriers have been set up to prevent dangerous, unsafe, or hazardous actions from occurring. The barriers may be physical devices, such as fuses, breakers, fences, guards, or locked cabinets. They may also be administrative barriers, such as rules, regulations, laws, company policies, training certifications, technical codes, technical specifications, design margins, or redundant design features.</p>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_106" aria-label=" Page 106. "/>The idea behind barrier analysis is that because barriers have been previously put in the way to prevent the undesirable event from occurring, a barrier must either have failed, was not in place, or was somehow circumvented for the failure, accident, or crime to have occurred. In a crime, of course, the circumvention was likely deliberate and considered.</p>
+<p class="indent">One way to graphically present a barrier analysis is to flowchart the event with a basic timeline. Then add into the timeline the places where the barriers should have prevented the undesirable event from going further, causing the failure.</p>
+<p class="indent">Subjectively, some barriers are considered strong and some weak. A physical device that prevents an unsafe act from occurring at all is usually considered to be a strong barrier. It is judged to be effective in preventing or stopping the undesired event from occurring. A safety guard over a flywheel is an example of a strong barrier. If such a guard were removed for maintenance and was not replaced when the maintenance was completed, the loss of this barrier could cause an accident.</p>
+<p class="indent">An example of a weak barrier is training that was done a long time ago and was done only once. Because training is often forgotten when not reinforced or practiced regularly, its effectiveness diminishes with time. Even if a person was once well trained about how to do a complex task, if he has not done that task in a long time, he has an increased risk of making a mistake.</p>
+<p class="indent">Some barriers are explicit and some are implicit. An example of an explicit barrier is a safety rule that is posted, enforcing the wearing of a hard hat. An implicit barrier might be personal shame that would be experienced if a person were caught doing something considered immoral or dishonest, or perhaps peer disapproval of certain actions.</p>
+<p class="indent">In some cases, it has been necessary to overcome the implicit barrier of peer disapproval to put into place explicit safety rules. An example of that is the use of earplugs. At some locations, despite the obvious ear damage that can result from not using them, some male workers have in the past considered earplugs to not be manly. This collective peer pressure sometimes caused other male workers to also not use earplugs, so that they, too, would be considered macho and avoid ridicule by the group.</p>
+<p class="indent">To increase the odds that there will be no failure or undesired outcomes, it is typical that there are several layers of barriers. It is presumed that each successive barrier reduces the chances that the failure will occur. Consequently, when failures do occur, it is sometimes the case that there are a series of things that went wrong all at the same time.</p>
+<p class="indent">The Space Shuttle <i>Challenger</i> accident that occurred January 28, 1986, and the Space Shuttle <i>Columbia</i> accident that occurred February 1, 2003, are two famous events often cited as fitting this category. Both failures were the result of a series of flawed decisions, poor judgments, and equipment <span epub:type="pagebreak" role="doc-pagebreak" id="page_107" aria-label=" Page 107. "/>deficiencies that had been considered barriers to prevent such accidents from occurring.</p>
+<p class="noindent">  In that regard, it is worth repeating verbatim two paragraphs contained within the executive summary in Volume 1 of the Columbia Accident Investigation Board report of August 2003. They describe how multiple layers of barriers erected by even the brightest and best can fail and allow an event such as the <i>Columbia</i> accident to occur.</p>
+<blockquote>
+<p class="quote">The physical cause of the loss of Columbia and its crew was a breach in the Thermal Protection System on the leading edge of the left wing, caused by a piece of insulating foam which separated from the left bipod ramp section of the External Tank at 81.7 seconds after launch, and struck the wing in the vicinity of the lower half of Reinforced Carbon-Carbon panel number 8. During re-entry this breach in the Thermal Protection System allowed superheated air to penetrate through the leading edge insulation and progressively melt the aluminum structure of the left wing, resulting in a weakening of the structure until increasing aerodynamic forces caused loss of control, failure of the wing, and break-up of the Orbiter. This breakup occurred in a flight regime in which, given the current design of the Orbiter, there was no possibility for the crew to survive.</p>
+<p class="quote1">  The organizational causes of this accident are rooted in the Space Shuttle Program&#x2019; s history and culture, including the original compromises that were required to gain approval for the Shuttle, subsequent years of resource constraints, fluctuating priorities, schedule pressures, mischaracterization of the Shuttle as operational rather than developmental, and lack of an agreed national vision for human space flight. Cultural traits and organizational practices detrimental to safety were allowed to develop, including: reliance on past success as a substitute for sound engineering practices (such as testing to understand why systems were not performing in accordance with requirements); organizational barriers that prevented effective communication of critical safety information and stifled professional differences of opinion; lack of integrated management across program elements; and the evolution of an informal chain of command and decision-making processes that operated outside the organization&#x2019; s rules.</p>
+</blockquote>
+<p class="noindent">In this regard, I highly recommend that Volume 1 of the Columbia Accident Investigation Board report of August 2003 be read, especially the executive summary, in its entirety. It is a free download from the Internet. The Internet web address and other publication particulars are listed in Chapter 8.</p>
+</section>
+<section aria-labelledby="sec4_14">
+<h2 class="ch4subheading" id="sec4_14">Motive, Means, and Opportunity (MMO</h2>
+<p class="noindent">In a previous section that discussed the human performance evaluation process (HPEP), it was tacitly implied that the failure to act appropriately <span epub:type="pagebreak" role="doc-pagebreak" id="page_108" aria-label=" Page 108. "/>was perhaps inadvertent, accidental, or unintentional. Perhaps if the person had been better informed, better equipped, more rested, better trained, or had better instructions or better leadership, the mistake might have been avoided. In other words, it was implied that the person wanted to perform appropriately but was unable to do so for some reason.</p>
+<p class="indent">There is, of course, a dark side of human performance that involves deliberate actions or inactions that result in harm, damage, or loss. When the actions of a person that initiate a failure, accident, or crime appear to have been deliberate, it is useful to assess means, motive, and opportunity.</p>
+<p class="noindentch04"><i>Means</i> is defined as the ability of a person to do the action necessary to cause the result. Does he have the skill, the dexterity, the resources, the equipment, or the physical and mental attributes to cause the result?</p>
+<p class="noindentch04"><i>Motive</i> is defined as the reason why a person would do the act necessary to initiate or allow harm, damage, or loss to occur. Since there is often either an implicit or explicit social, legal, or administrative barrier to being caught doing the act, a sufficient motive is necessary to overcome the fear or reticence associated with deliberately violating a known barrier.</p>
+<p class="indent">It has been reported by various sources that there are seven basic motives for a crime or crime-like action. Whether this list is completely exhaustive is open to question, but it does appear to encompass most of the motives an investigator would regularly encounter. They are as follows:</p>
+<ol class="ol">
+<li class="orderedlist04">Gain:This is one of the most popular motives. Gain, which is usually money or property, is either for the person or for a favored second person, like a relative or romantic partner.</li>
+<li class="orderedlist04">Anger, revenge, vengeance.</li>
+<li class="orderedlist04">Covering up another crime or action that the first person wishes to remain hidden.</li>
+<li class="orderedlist04">Jealousy.</li>
+<li class="orderedlist04">Excitement and thrills:This is often associated with abnormal mental conditions such as those induced by drugs, psychoses, neuroses, irrational impulses, perversions, temporary mental states, unusual physical condition, and so on. Pyromaniacs fit into this category. Certain usual types of sexual gratification may also fit into this category.</li>
+<li class="orderedlist04">Vandalism, civil riots, revolutions, insurrections, and war.</li>
+<li class="orderedlist04">Terrorism:Fanatical religious or political beliefs that require hostile or resistive actions as part of their belief system.</li>
+</ol>
+<p class="noindent"><i>Opportunity</i> is simply whether a person was in the right place at the right time to accomplish the act or deed.</p>
+<p class="indent"><span epub:type="pagebreak" role="doc-pagebreak" id="page_109" aria-label=" Page 109. "/>It is important to recognize that just because a person has the motive, means, and opportunity, does not mean that the person actually has done the deed. It is possible that several people may have the same motive, means, and opportunity. In the case of sabotage on the job, for example, this is often the case when there are hard feelings between labor and management.</p>
+<p class="indent">Thus, having all of these attributes does not, by itself, constitute proof. It might be said that means, motive, and opportunity are necessary, but not sufficient. This is why it is important to assiduously apply the principle of falsification.</p>
+<p class="indent">Motive can be further subdivided into weak or strong motives. Sometimes it is difficult to detect the real motive of a person. For various reasons, the culprit may not even know himself if the deed was done on impulse. However, Cicero, the famous Roman litigator, statesman, and orator said it best when he posed the question: <i>Cui bono?</i> (Who benefits?)</p>
+<p class="indent">Timelines and verifiable alibis are useful in determining whether a person had the opportunity to commit the act, deed, or crime. Records and document checks are useful in determining whether a person had the means. For example, if a certain tool was needed to commit the act, determining who has such a tool, where such tools might be found, and who has and does not have access to them is very useful information.</p>
+<p class="indent">If there is a list of suspects, motive, means, and opportunity information can be handily organized, for example, as in Table 4.5.</p>
+<table class="tablech04" id="tab4_5">
+<caption>
+<p class="tcaption"><span epub:type="label">Table</span> <span epub:type="ordinal">4.5</span><span class="space"/>MMO Summary Table</p>
+</caption> 
+<thead>
+<tr class="th">
+<th></th>
+<th>Suspect A</th>
+<th>Suspect B</th>
+<th>Suspect C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motive</td>
+<td class="tab3tr">X</td>
+<td class="tab3tr">X</td>
+<td class="tab3tr">?</td>
+</tr>
+<tr>
+<td>Means</td>
+<td class="tab3tr"></td>
+<td class="tab3tr">X</td>
+<td class="tab3tr">X</td>
+</tr>
+<tr>
+<td>Opportunity</td>
+<td class="tab3tr">X</td>
+<td class="tab3tr">X</td>
+<td class="tab3tr">X</td>
+</tr>
+<tr class="td4">
+<td>Physical link</td>
+<td class="tab3tr"></td>
+<td class="tab3tr">X</td>
+<td class="tab3tr"></td>
+</tr>
+</tbody>
+</table>
+<p class="indent">Note that in Table 4.5, a fourth item was added to the list: physical link. Finding a unique physical link between a suspect and the crime or deed further increases the likelihood that the particular suspect may have been the perpetrator.</p>
+</section>
+<section aria-labelledby="sec4_15">
+<h2 class="ch4subheading" id="sec4_15">Management Organizational Risk Tree (MORT)</h2>
+<p class="noindent">This method was developed in the early 1970s for the U.S. Energy Research and Development Administration to assess safety-related issues in complex, goal-oriented organizations. There is also a simpler variant of MORT, called SMORT (Safety Management Organizational Review Technique). Essentially, it is an organizational fault tree analysis method.</p>
+<p class="indent">In this method, the various safety programs and program elements are flowcharted logically. The undesired consequence, which often is poor <span epub:type="pagebreak" role="doc-pagebreak" id="page_110" aria-label=" Page 110. "/>performance, a failure, or an accident, is the starting point. The deficiencies that caused the undesirable consequence are tracked through the various programs or program elements in the organization that had control over them.</p>
+<p class="indent">MORT tracks who or which program was responsible for this, who or which program was responsible for that, when was this supposed to happen, and so on.</p>
+<p class="indent">In this way, all the programmatic deficiencies in the organization that led to or contributed to the undesirable consequence are identified. Once identified, the reasons why each program or program element failed to do its part can be individually assessed and fixed.</p>
+</section>
+<section aria-labelledby="sec4_16">
+<h2 class="ch4subheading" id="sec4_16">Proprietary Investigation Methods</h2>
+<p class="noindent">There are many popular proprietary investigation methodologies currently being packaged and sold. There are at last count over one hundred. Many, if not most, proprietary investigation methods come with training manuals, both online and offline, that are replete with their own specialized jargon. Of course, they also come with professional trainers to teach the method at your company&#x2019; s location, or at a school where people attend a 1-, 3-, or 5-day how-to course of instruction.</p>
+<p class="indent">Most proprietary investigation methodologies include a supply of copyrighted formatted flowcharts and worksheets for interim reports and final reports, and a range of publications that help the novice step through the particular methodology. Some also offer linked computer flowcharting and word processing programs that produce complete reports formatted according to the particular methodology. Besides the usual intensive initial training session for novitiates, there are also some advanced training classes where a person can become a certified trainer in a particular method.</p>
+<p class="indent">Among the more popular proprietary investigative methodologies being marketed are Proact&#x00AE;, Kepner-Tregoe&#x00AE; (i.e., eThink&#x00AE; and Project Logic&#x00AE;), Apollo&#x00AE; (i.e., RealityCharting&#x00AE;), and Tap Root&#x00AE;. Other failure or root cause training materials are known by the name of the primary instructor who initially developed the materials, e.g., Chong Chiu of FPI International&#x00AE;. However, this is just a small, token list. There are too many to mention by name.</p>
+<p class="indent">Possibly the most well-known and well-marketed proprietary method is the Kepner-Tregoe method, commonly called the K-T method, whose company headquarters is in Princeton, New Jersey. The founders of the method, Dr. Kepner, a psychologist, and Dr. Tregoe, a sociologist, discovered or concluded in the 1950s, while employees at the Rand Corporation, that good decision making in the Air Force had more to do with exercising a logical process in gathering, organizing, and analyzing information than it did with an individual&#x2019; s rank. (Please read the <i>Columbia</i> Accident Investigation Board <span epub:type="pagebreak" role="doc-pagebreak" id="page_111" aria-label=" Page 111. "/>report executive summary with this in mind.) This finding became the basis for the &#x201C;rational process&#x201D; espoused in their various business analysis methods. The rational process method was also explained in the 1965 book <i>The Rational Manager,</i> which was published by the McGraw-Hill Company. Most of the K-T method is based upon the principles discussed in the book.</p>
+<p class="indent">In brief, the rational process is a structure that purports to maximize critical thinking skills of key people. The rational process includes the following fundamental parts:</p>
+<ul class="ul">
+<li class="dotch01">A situation appraisal</li>
+<li class="dotch01">Problem analysis</li>
+<li class="dotch01">Decision analysis</li>
+<li class="dotch01">Potential problem analysis</li>
+</ul>
+<p class="indent">The remarkable success achieved in marketing the K-T method in its various forms, to both domestic and international businesses, has, not surprisingly, spawned many competitors. Consequently, most organizations of any size eventually will be approached by representatives of some of these proprietary investigative method companies, or at least receive materials from them in the mail that urge the management of the organization to purchase their training materials, lessons, or programs.</p>
+<p class="indent">No one proprietary method appears best. Each has its good points and weak points, depending upon the particular application, the instructor, and the ability of the person to apply the particular method. Some seem to work better for management problems, and some seem to work better for equipment problems.</p>
+<p class="indent">Good proprietary investigation methods can be helpful in organizing and managing an investigation. Engaging the services of one of these providers also relieves an organization from the burden of preparing its own training materials, especially if the organization internally lacks the experience, time, or resources to do so. Graduates of the various proprietary methods then often become the investigation managers or investigation team leaders within their company or organization.</p>
+<p class="indent">Knowing a particular proprietary method, however, does not automatically imbue graduates with Sherlockian acumen and is not a substitute for subject matter knowledge. Sometimes, newly minted graduates of a particular proprietary method become enamored with the method and promote its use for all occasions and circumstances with the zeal of a missionary. In such cases, I am reminded of the quip, &#x201C;If you happen to be a hammer, the rest of the world looks like a nail.&#x201D;</p>
+<p class="indent">Those proprietary investigation methods that eschew the scientific method, utilize implicit assumptions in their analytical techniques, are not evidence driven, do not pursue falsification, and do not readily allow initial <span epub:type="pagebreak" role="doc-pagebreak" id="page_112" aria-label=" Page 112. "/>hypotheses to evolve as evidence is collected should be avoided. Without these fundamentals, the resulting investigation report may simply be a collection of logically disjointed facts and opinions, slickly packaged in a nice- looking format.</p>
+</section>
+</section>
+</section>
+</body>
+</html>

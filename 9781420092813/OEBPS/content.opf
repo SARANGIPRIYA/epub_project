@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="isbn9781000977080" xml:lang="en">
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+<dc:title>Scientific Method: Applications in Failure Investigation and Forensic Science</dc:title>
+<dc:creator id="creator">Randall K. Noon</dc:creator>
+<meta refines="#creator" property="role" scheme="marc:relators">edt</meta>
+<dc:format>application/ePub</dc:format>
+<dc:date>2009</dc:date>
+<dc:identifier id="isbn9781000977080">9781000977080</dc:identifier>
+<meta refines="#isbn9781000977080" property="identifier-type" scheme="onix:codelist5">15</meta>
+<dc:source id="isbn9781420092806">9781420092806</dc:source>
+<meta refines="#isbn9781420092806" property="source-of">pagination</meta>
+<dc:rights>© 2009 by Taylor &amp; Francis Group, LLC</dc:rights>
+<dc:relation>9781000977080, 9781420092806</dc:relation>
+<dc:language>en</dc:language>
+<dc:publisher>Taylor &amp; Francis Group</dc:publisher>
+<meta property="dcterms:modified">2024-03-22T00:00:00Z</meta>
+<meta name="cover" content="cover-image"/>
+<meta property="schema:accessMode">textual</meta>
+<meta property="schema:accessMode">visual</meta>
+<meta property="schema:accessModeSufficient">textual</meta>
+<meta property="schema:accessibilityFeature">structuralNavigation</meta>
+<meta property="schema:accessibilityFeature">tableOfContents</meta>
+<meta property="schema:accessibilityFeature">index</meta>
+<meta property="schema:accessibilityFeature">readingOrder</meta>
+<meta property="schema:accessibilityFeature">displayTransformability</meta>
+<meta property="schema:accessibilityHazard">none</meta>
+<meta property="schema:accessibilityFeature">printPageNumbers</meta>
+<meta property="schema:accessibilityFeature">alternativeText</meta>
+<meta property="schema:accessibilitySummary">Scientific Method: Applications in Failure Investigation and Forensic Science with figures, footnotes, lists, and formatting defined with structural markup. This book contains accessibility features such as a table of contents, index, page-list, landmarks, reading order, structural navigation, semantic structure, in-text links, page numbers and backlinks. All in-text citations are linked, however backlinks only return to their first in-text citation. Linked DOIs are provided, but are not uniquely identified.</meta>
+</metadata>
+<manifest>
+<item id="toc" href="xhtml/00_nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+<item id="halftitle" href="xhtml/01_halftitle.xhtml" media-type="application/xhtml+xml"/>
+<item id="frontmatter" href="xhtml/02_frontmatter.xhtml" media-type="application/xhtml+xml"/>
+<item id="title" href="xhtml/03_title.xhtml" media-type="application/xhtml+xml"/>
+<item id="copyright" href="xhtml/04_copyright.xhtml" media-type="application/xhtml+xml"/>
+<item id="thefogwentthud" href="xhtml/05_thefogwentthud.xhtml" media-type="application/xhtml+xml"/>
+<item id="contents" href="xhtml/06_contents.xhtml" media-type="application/xhtml+xml"/>
+<item id="internationforensicscienceseries" href="xhtml/07_internationforensicscienceseries.xhtml" media-type="application/xhtml+xml"/>
+<item id="foreword" href="xhtml/08_foreword.xhtml" media-type="application/xhtml+xml"/>
+<item id="preface" href="xhtml/09_preface.xhtml" media-type="application/xhtml+xml"/>
+<item id="abouttheauthor" href="xhtml/10_abouttheauthor.xhtml" media-type="application/xhtml+xml"/>
+<item id="chapter01" href="xhtml/11_chapter01.xhtml" media-type="application/xhtml+xml"/>
+<item id="chapter02" href="xhtml/12_chapter02.xhtml" media-type="application/xhtml+xml"/>
+<item id="chapter03" href="xhtml/13_chapter03.xhtml" media-type="application/xhtml+xml" properties="mathml"/>
+<item id="chapter04" href="xhtml/14_chapter04.xhtml" media-type="application/xhtml+xml"/>
+<item id="chapter05" href="xhtml/15_chapter05.xhtml" media-type="application/xhtml+xml"/>
+<item id="chapter06" href="xhtml/16_chapter06.xhtml" media-type="application/xhtml+xml" properties="mathml"/>
+<item id="chapter07" href="xhtml/17_chapter07.xhtml" media-type="application/xhtml+xml"/>
+<item id="chapter08" href="xhtml/18_chapter08.xhtml" media-type="application/xhtml+xml"/>
+<item id="index" href="xhtml/19_index.xhtml" media-type="application/xhtml+xml"/>
+<item id="pub" href="images/pub.jpg" media-type="image/jpeg"/>
+<item id="fig1_1" href="images/fig1_1.jpg" media-type="image/jpeg"/>
+<item id="fig4_1" href="images/fig4_1.jpg" media-type="image/jpeg"/>
+<item id="fig4_2" href="images/fig4_2.jpg" media-type="image/jpeg"/>
+<item id="fig4_3" href="images/fig4_3.jpg" media-type="image/jpeg"/>
+<item id="fig4_4" href="images/fig4_4.jpg" media-type="image/jpeg"/>
+<item id="fig4_5" href="images/fig4_5.jpg" media-type="image/jpeg"/>
+<item id="fig4_6" href="images/fig4_6.jpg" media-type="image/jpeg"/>
+<item id="fig4_7" href="images/fig4_7.jpg" media-type="image/jpeg"/>
+<item id="fig4_8" href="images/fig4_8.jpg" media-type="image/jpeg"/>
+<item id="fig4_9" href="images/fig4_9.jpg" media-type="image/jpeg"/>
+<item id="fig4_10" href="images/fig4_10.jpg" media-type="image/jpeg"/>
+<item id="fig4_11" href="images/fig4_11.jpg" media-type="image/jpeg"/>
+<item id="fig4_12" href="images/fig4_12.jpg" media-type="image/jpeg"/>
+<item id="table4_2" href="images/table4_2.jpg" media-type="image/jpeg"/>
+<item id="fig5_1" href="images/fig5_1.jpg" media-type="image/jpeg"/>
+<item id="fig6_1" href="images/fig6_1.jpg" media-type="image/jpeg"/>
+<item id="fig6_2" href="images/fig6_2.jpg" media-type="image/jpeg"/>
+<item id="fig6_3" href="images/fig6_3.jpg" media-type="image/jpeg"/>
+<item id="fig6_4" href="images/fig6_4.jpg" media-type="image/jpeg"/>
+<item id="fig6_5" href="images/fig6_5.jpg" media-type="image/jpeg"/>
+<item id="fig6_6" href="images/fig6_6.jpg" media-type="image/jpeg"/>
+<item id="fig6_7" href="images/fig6_7.jpg" media-type="image/jpeg"/>
+<item id="fig6_8" href="images/fig6_8.jpg" media-type="image/jpeg"/>
+<item id="fig6_9" href="images/fig6_9.jpg" media-type="image/jpeg"/>
+<item id="fig6_10" href="images/fig6_10.jpg" media-type="image/jpeg"/>
+<item id="fig6_11" href="images/fig6_11.jpg" media-type="image/jpeg"/>
+<item id="fig6_12" href="images/fig6_12.jpg" media-type="image/jpeg"/>
+<item id="fig6_13" href="images/fig6_13.jpg" media-type="image/jpeg"/>
+<item id="fig7_1" href="images/fig7_1.jpg" media-type="image/jpeg"/>
+<item id="fig7_3" href="images/fig7_3.jpg" media-type="image/jpeg"/>
+<item id="fig7_5" href="images/fig7_5.jpg" media-type="image/jpeg"/>
+<item id="fig7_7" href="images/fig7_7.jpg" media-type="image/jpeg"/>
+<item id="fig7_9" href="images/fig7_9.jpg" media-type="image/jpeg"/>
+<item id="fig7_11" href="images/fig7_11.jpg" media-type="image/jpeg"/>
+<item id="fig7_13" href="images/fig7_13.jpg" media-type="image/jpeg"/>
+<item id="fig7_15" href="images/fig7_15.jpg" media-type="image/jpeg"/>
+<item id="fig7_16" href="images/fig7_16.jpg" media-type="image/jpeg"/>
+<item id="fig7_17" href="images/fig7_17.jpg" media-type="image/jpeg"/>
+<item id="fig7_18" href="images/fig7_18.jpg" media-type="image/jpeg"/>
+<item id="stylesheet" href="styles/stylesheet.css" media-type="text/css"/>
+</manifest>
+<spine>
+<itemref idref="halftitle"/>
+<itemref idref="frontmatter"/>
+<itemref idref="title"/>
+<itemref idref="copyright"/>
+<itemref idref="thefogwentthud"/>
+<itemref idref="contents"/>
+<itemref idref="internationforensicscienceseries"/>
+<itemref idref="foreword"/>
+<itemref idref="preface"/>
+<itemref idref="abouttheauthor"/>
+<itemref idref="chapter01"/>
+<itemref idref="chapter02"/>
+<itemref idref="chapter03"/>
+<itemref idref="chapter04"/>
+<itemref idref="chapter05"/>
+<itemref idref="chapter06"/>
+<itemref idref="chapter07"/>
+<itemref idref="chapter08"/>
+<itemref idref="index"/>
+</spine>
+</package>
